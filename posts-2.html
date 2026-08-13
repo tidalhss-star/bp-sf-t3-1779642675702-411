@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/4) · sf-t3-1779642675702-411</title>
+  <meta name="description" content="sf-t3-1779642675702-411에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-411.maphoshirts.today/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* RESET + BASE */
+ *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+ html {
+ font-size: 16px;
+ scroll-behavior: smooth;
+ }
+
+ body {
+ background: #000;
+ color: #fff;
+ font-family: 'Impact', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+ line-height: 1.2;
+ padding: 0;
+ -webkit-font-smoothing: antialiased;
+ }
+
+ /* 타이포그래피 시스템 */
+ h1, h2, h3, h4, h5, h6 {
+ font-family: 'Impact', system-ui, sans-serif;
+ font-weight: 400;
+ text-transform: uppercase;
+ letter-spacing: -0.02em;
+ }
+
+ h1 { font-size: clamp(3.2rem, 15vw, 8rem); line-height: 0.9; }
+ h2 { font-size: clamp(2.8rem, 10vw, 6rem); line-height: 0.95; }
+ h3 { font-size: clamp(1.6rem, 5vw, 3rem); }
+
+ p, li, a, blockquote, figcaption {
+ font-family: 'Courier New', 'Courier', 'Liberation Mono', monospace;
+ font-size: 1rem;
+ line-height: 1.4;
+ color: #fff;
+ }
+
+ a {
+ color: #ff3b00;
+ text-decoration: none;
+ border-bottom: 3px solid #ff3b00;
+ }
+ a:hover { background: #ff3b00; color: #000; }
+
+ /* 레이아웃: 풀블리드, 비대칭 */
+ .container {
+ max-width: none;
+ padding: 72px 24px;
+ margin: 0 auto;
+ }
+
+ section {
+ padding: 72px 24px;
+ margin-bottom: 120px;
+ border: 4px solid #ff3b00;
+ position: relative;
+ }
+
+ /* 섹션 간격 + 오버랩 */
+ section + section {
+ margin-top: -60px; /* 오버랩 */
+ }
+
+ /* 헤더 */
+ header {
+ padding: 72px 24px 24px;
+ border-bottom: 6px solid #ff3b00;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+ background: #000;
+ }
+
+ .logo {
+ font-size: 2.8rem;
+ font-family: Impact, sans-serif;
+ color: #fff;
+ text-transform: uppercase;
+ letter-spacing: -0.05em;
+ line-height: 1;
+ border: none;
+ }
+ .logo:hover { background: none; color: #ff3b00; border: none; }
+
+ /* 네비게이션 */
+ nav {
+ display: flex;
+ gap: 48px;
+ align-items: center;
+ }
+
+ nav a {
+ font-family: 'Courier New', monospace;
+ font-size: 1.2rem;
+ font-weight: bold;
+ color: #fff;
+ border: 4px solid #fff;
+ padding: 12px 24px;
+ text-transform: uppercase;
+ background: #000;
+ transition: 0.1s;
+ }
+ nav a:hover {
+ background: #ff3b00;
+ border-color: #ff3b00;
+ color: #000;
+ }
+
+ /* 햄버거 (모바일) */
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ gap: 6px;
+ cursor: pointer;
+ background: transparent;
+ border: none;
+ padding: 8px;
+ }
+ .hamburger span {
+ display: block;
+ width: 36px;
+ height: 5px;
+ background: #fff;
+ border: 2px solid #ff3b00;
+ }
+
+ #nav-toggle { display: none; }
+
+ /* 히어로 */
+ .hero {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 48px;
+ align-items: center;
+ background: #000;
+ border: 6px solid #ff3b00;
+ padding: 72px;
+ margin-bottom: 120px;
+ transform: rotate(-0.5deg);
+ }
+
+ .hero-content {
+ z-index: 2;
+ }
+
+ .hero h1 {
+ font-size: clamp(4rem, 18vw, 9rem);
+ color: #fff;
+ text-shadow: 6px 6px 0 #ff3b00;
+ margin-bottom: 24px;
+ }
+
+ .hero p {
+ font-size: 1.6rem;
+ background: #ff3b00;
+ color: #000;
+ padding: 12px 24px;
+ display: inline-block;
+ border: 4px solid #fff;
+ transform: skewX(-3deg);
+ margin-bottom: 36px;
+ }
+
+ .hero-cta {
+ display: inline-block;
+ font-size: 2.2rem;
+ font-family: Impact, sans-serif;
+ padding: 24px 48px;
+ background: #000;
+ color: #ff3b00;
+ border: 6px solid #ff3b00;
+ text-transform: uppercase;
+ transform: rotate(1deg);
+ transition: 0.05s;
+ }
+ .hero-cta:hover {
+ background: #ff3b00;
+ color: #000;
+ border-color: #fff;
+ transform: rotate(-1deg) scale(1.02);
+ }
+
+ .hero-visual {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ background: repeating-linear-gradient(45deg, #ff3b00 0px, #ff3b00 8px, #000 8px, #000 16px);
+ min-height: 400px;
+ border: 4px solid #fff;
+ transform: rotate(1.5deg);
+ }
+
+ .hero-visual svg {
+ width: 80%;
+ height: auto;
+ filter: drop-shadow(8px 8px 0 #ff3b00);
+ }
+
+ /* 서비스 섹션 (비대칭 그리드) */
+ .services-grid {
+ display: grid;
+ grid-template-columns: 1.2fr 0.8fr;
+ gap: 48px;
+ padding: 24px 0;
+ }
+
+ .services-grid .block {
+ border: 6px solid #fff;
+ padding: 48px;
+ background: #000;
+ position: relative;
+ }
+
+ .services-grid .block:nth-child(1) { transform: rotate(-1deg); }
+ .services-grid .block:nth-child(2) { transform: rotate(1.5deg); margin-top: 48px; }
+ .services-grid .block:nth-child(3) { transform: rotate(0.5deg); grid-column: span 2; }
+
+ .block h3 {
+ font-size: 2.8rem;
+ color: #ff3b00;
+ border-bottom: 6px solid #ff3b00;
+ padding-bottom: 12px;
+ margin-bottom: 24px;
+ }
+
+ .block p, .block li {
+ font-size: 1.2rem;
+ margin-bottom: 12px;
+ }
+
+ .block ul {
+ list-style: none;
+ padding-left: 0;
+ }
+
+ .block li::before {
+ content: "▶ ";
+ color: #ff3b00;
+ font-weight: bold;
+ }
+
+ /* UGC 리뷰 카드 */
+ .reviews-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 48px;
+ margin-top: 48px;
+ }
+
+ .review-card {
+ border: 6px solid #ff3b00;
+ padding: 36px;
+ background: #111;
+ position: relative;
+ transform: rotate(var(--rot, 0deg));
+ }
+
+ .review-card:nth-child(1) { --rot: -1deg; }
+ .review-card:nth-child(2) { --rot: 1.5deg; }
+ .review-card:nth-child(3) { --rot: -0.5deg; }
+ .review-card:nth-child(4) { --rot: 2deg; }
+ .review-card:nth-child(5) { --rot: -2deg; }
+
+ .review-meta {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ font-family: 'Courier New', monospace;
+ border-bottom: 4px solid #ff3b00;
+ padding-bottom: 12px;
+ margin-bottom: 12px;
+ }
+
+ .review-nick {
+ font-weight: bold;
+ font-size: 1.2rem;
+ color: #fff;
+ }
+
+ .review-date {
+ color: #ff3b00;
+ }
+
+ .review-stars {
+ color: #ff3b00;
+ font-size: 1.8rem;
+ letter-spacing: 4px;
+ }
+
+ .review-text {
+ font-size: 1.1rem;
+ color: #ddd;
+ margin-top: 12px;
+ }
+
+ /* 푸터 */
+ footer {
+ border-top: 8px solid #ff3b00;
+ padding: 72px 24px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
+ background: #000;
+ }
+
+ footer p, footer a {
+ font-family: 'Courier New', monospace;
+ font-size: 1.1rem;
+ }
+
+ footer a {
+ border: 4px solid #ff3b00;
+ padding: 12px 24px;
+ display: inline-block;
+ }
+
+ /* 반응형 미디어 쿼리 */
+ @media (max-width: 768px) {
+ .container, section, header, footer {
+ padding-left: 16px;
+ padding-right: 16px;
+ }
+
+ section {
+ padding: 48px 16px;
+ margin-bottom: 80px;
+ }
+
+ header {
+ flex-direction: row;
+ padding-top: 48px;
+ }
+
+ .hamburger {
+ display: flex;
+ }
+
+ nav {
+ display: none;
+ flex-direction: column;
+ width: 100%;
+ background: #000;
+ border: 4px solid #ff3b00;
+ padding: 24px;
+ margin-top: 24px;
+ gap: 24px;
+ order: 3;
+ }
+
+ #nav-toggle:checked + .hamburger + nav {
+ display: flex;
+ }
+
+ nav a {
+ width: 100%;
+ text-align: center;
+ border-width: 4px;
+ font-size: 1.4rem;
+ }
+
+ .hero {
+ grid-template-columns: 1fr;
+ padding: 36px 16px;
+ gap: 24px;
+ transform: none;
+ }
+
+ .hero h1 {
+ font-size: 3.6rem;
+ }
+
+ .hero-visual {
+ min-height: 250px;
+ transform: none;
+ }
+
+ .services-grid {
+ grid-template-columns: 1fr;
+ gap: 36px;
+ }
+
+ .services-grid .block:nth-child(2) { margin-top: 0; }
+ .services-grid .block:nth-child(3) { grid-column: span 1; }
+
+ .reviews-grid {
+ grid-template-columns: 1fr;
+ gap: 36px;
+ }
+
+ footer {
+ flex-direction: column;
+ gap: 32px;
+ text-align: center;
+ }
+ }
+
+ /* 작은 트위스트 */
+ .skew-block {
+ transform: skewX(-0.8deg);
+ }
+
+ .blood-line {
+ width: 100%;
+ height: 8px;
+ background: #ff3b00;
+ margin: 48px 0;
+ }
+
+ /* 블러드 라인 커스텀 */
+ .full-bleed {
+ margin-left: calc(-50vw + 50%);
+ margin-right: calc(-50vw + 50%);
+ }
+
+ /* 전화 아이콘 (SVG 인라인) */
+ .phone-badge {
+ display: inline-flex;
+ align-items: center;
+ gap: 12px;
+ background: #ff3b00;
+ color: #000;
+ padding: 12px 24px;
+ border: 4px solid #fff;
+ font-size: 1.4rem;
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/4) · sf-t3-1779642675702-411">
+  <meta property="og:description" content="sf-t3-1779642675702-411에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-411.maphoshirts.today/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <a href="/" class="logo">네온<br>보이드</a>
+
+ <input type="checkbox" id="nav-toggle" hidden>
+ <label for="nav-toggle" class="hamburger" aria-label="메뉴 열기">
+ 
+ </label>
+
+ <nav id="primary-nav">
+ <a href="#services">서비스</a>
+ <a href="#reviews">리뷰</a>
+ 
+ </nav>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 69개 · 2/4 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0175.html">실패 없는 행사를 위한 PBN 빌더 응용과 마포 단체 회식용 대형 룸 노래방 가격 정보 활용법</a>
+        <p class="post-item__summary">많은 조직이 비즈니스 회식 매칭을 준비할 때 인터넷상의 정보를 검색하지만 잘못된 광고에 현혹되어 낭패를 보는 경우가 많습니다. PBN 빌더를 통해 생성된 양질의 콘텐츠를 식별하는 눈을 갖추는 것처럼</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0176.html">PBN 빌더 데이터를 참고하여 분석하는 마포 코인노래방 방음 시설 비교 가이드와 환경 체크</a>
+        <p class="post-item__summary">마포 지역의 코인노래방을 이용할 때 방음 성능은 쾌적한 이용 경험을 결정하는 가장 중요한 요소입니다. 단순히 인테리어가 화려한 곳보다는 소음 진동 저감 설비가 얼마나 잘 갖춰져 있는지 확인하는 것이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0001.html">PBN 빌더 활용과 서울 정보 블로그 탐색 시 유흥 용어 정리의 중요성</a>
+        <p class="post-item__summary">흔히 네트워크 판도를 설계할 때 안정적인 지표 확보만을 최우선으로 생각하곤 합니다. 하지만 마포 지역에서 서버 웜업을 진행하는 과정에서 관찰한 작은 모니터링 단서들은 전혀 다른 사실을 말해줍니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0002.html">마포 서버 웜업 관점에서 본 PBN 빌더 구축과 서울 정보 블로그의 유흥 업종 비교 분석</a>
+        <p class="post-item__summary">예상치 않은 초기 지표 차이는 종종 몇 달 뒤 커다란 운용 방식의 성패로 귀결되곤 합니다. 마포에서 서버 웜업 작업을 진행하며 추적한 기록에 따르면, 초반의 미세한 선택이 전체 시스템의 생존 기간에</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0003.html">PBN 빌더 운용 기법과 서울 정보 블로그 정보 탐색 관점의 유흥 가격 비교 체계</a>
+        <p class="post-item__summary">초기 설계 단계에서 무심코 지나친 세부 요소가 시간이 흐른 뒤 예상하지 못한 연쇄 반응을 일으키는 장면을 자주 관찰하게 됩니다. 마포 지역의 안정적인 서버 웜업 환경에서 축적된 지수 변화 데이터를 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0004.html">마포 서버 웜업 작업과 PBN 빌더 활용 시 서울 유흥 트렌드 정보 블로그 운영자가 검토할 리스크</a>
+        <p class="post-item__summary">서버 트래픽 리소스 점검 화면에 인덱싱 중단 경고가 붉은색으로 켜진 순간, 지난 작업의 흐름을 되짚어보게 됩니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0005.html">서울 유흥 트렌드 분석 채널 관점에서 본 PBN 빌더 기반 마포 서버 웜업의 실효성</a>
+        <p class="post-item__summary">로그 파일 분석기에 전송 실패 코드가 수천 줄씩 쌓여 가는 화면은 구축 방식의 원인을 정밀 추적하게 만듭니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0006.html">서울 정보 블로그를 위한 PBN 빌더 운용과 유흥 가격 비교 정보 검증 기준</a>
+        <p class="post-item__summary">더 많은 웹사이트 네트워크를 확보할수록 검색 노출 경쟁에서 무조건 유리하다는 흔한 조언은 통념과 전혀 다를 수 있습니다. 초기 구축 단계에서 어떤 서버와 연결 패턴을 채택하는지라는 작은 단서가 전체</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0007.html">PBN 빌더 운용 시 유흥 업종 비교 분석과 서울 지역 정보 블로그 관점</a>
+        <p class="post-item__summary">초기 자원을 투입할 때 흔히 들리는 조언은 구체적 조건에 따라 전혀 다른 결과를 낳습니다. 마포 인근에서 서버 웜업 작업을 진행하며 관찰한 현장 데이터는 인프라 구축의 기틀이 단순히 기술적 수치에만</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0008.html">PBN 빌더 활용과 유흥 트렌드 파악을 위한 서울 정보 블로그 분석 기록</a>
+        <p class="post-item__summary">&quot;처음부터 같은 방식으로 접근했던 것이 문제였습니다.&quot; 마포의 한 작업실에서 서버 웜업 과제를 다루던 중 나온 이 한마디는 실패 복기의 출발점이 되었습니다. 서울 중심의 정보 블로그 운영 과정에서 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0009.html">PBN 빌더 세팅과 유흥 이용 주의사항을 다루는 서울 정보 블로그 운용 리포트</a>
+        <p class="post-item__summary">모니터 화면에 가득 찬 이상 오류 로그는 수개월 동안 공들여 구축한 작업이 한순간에 무너졌음을 알리고 있었습니다. 마포 작업장에서 진행하던 서버 웜업 프로세스가 예기치 못한 차단 벽에 부딪힌 순간이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0010.html">마포 서버 웜업 관점에서 본 PBN 빌더 활용과 서울 정보 블로그의 유흥 이용 가이드 해석</a>
+        <p class="post-item__summary">네트워크를 처음 설계할 때 무조건 대량의 노드를 빠르게 구축하는 것이 정답이라고 생각하고 계신가요? 많은 작업자가 초기 설정 단계에서 동일한 패턴의 콘텐츠를 방대하게 뿌리는 실수를 저지릅니다. 마포</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0011.html">마포 서버 웜업 작업으로 살펴본 PBN 빌더 효율과 서울 정보 블로그의 접대 장소 추천 레이아웃 분석</a>
+        <p class="post-item__summary">초기 구축 단계에서 도메인 지표만 믿고 성급하게 대량 링크를 연결했다가 전체 네트워크가 한꺼번에 미인덱싱 처리된 경험이 있었습니다. 원인을 분석해 보니 서버의 부하 패턴과 IP 대역의 동질성이 지나</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0012.html">서버 웜업 현장에서 파악한 PBN 빌더 사용 패턴과 서울 정보 블로그의 유흥 이용 주의사항</a>
+        <p class="post-item__summary">자동화 구축 도구를 활용하면 누구나 손쉽게 수십 개의 노드를 순식간에 만들어낼 수 있다고 말합니다. 하지만 현장의 실제 움직임은 이러한 통념과 완전히 다르게 흘러갑니다. 세팅 버튼 몇 번으로 완성된</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0013.html">PBN 빌더 활용 시 서버 웜업 과정과 서울 정보 블로그 유흥 예산 가이드의 연관성</a>
+        <p class="post-item__summary">초기 설정 단계에서 의외로 많은 이들이 간과하는 지점은 시스템의 물리적 반응 속도가 아닌 네트워크 트래픽의 자연스러운 분포 형성 과정입니다. 마포 근처의 고성능 인프라 환경에서 세팅을 마친 후 바로</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0014.html">PBN 빌더 서버 웜업 시 점검할 서울 정보 블로그 유흥 예산 가이드 관련 요소</a>
+        <p class="post-item__summary">지난달 비가 내리던 마포의 어느 작업실에서 서버 네트워크의 초기 인덱싱 지표가 급격히 흔들리는 현상을 관찰했습니다. 최종 승인 단계를 앞두고 발생하는 이러한 불안정성은 대다수 운용자가 기술적 결함보</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0015.html">PBN 빌더 운용 환경에서 다루는 마포 서버 웜업 및 서울 정보 블로그 유흥 용어 정리</a>
+        <p class="post-item__summary">어두워진 마포의 한 벤처 사무실에서 네트워크 연결 반응 모니터를 주시하던 엔지니어의 노트에는 예기치 않은 연결 실패 기록이 가득했습니다. 수많은 작업자가 초기 시스템 배치 직후 겪게 되는 이 상황은</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0016.html">PBN 빌더 운용 시 유흥 트렌드 및 서울 정보 블로그 분석의 중요성</a>
+        <p class="post-item__summary">초기 설정 단계에서 예기치 못한 반응 차이가 발생하는 원인은 기술적 조건보다 운영 방향성의 분기에 있습니다. 네트워크 확장 과정에서 서버 웜업을 진행하는 기준을 어떻게 잡느냐에 따라 장기적인 안정성</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0017.html">PBN 빌더 활용과 유흥 상권 정보 및 서울 정보 블로그 운영 전략</a>
+        <p class="post-item__summary">동일한 세팅 과정을 거쳤음에도 불구하고 한쪽에서는 안정적인 반응이 나타나는 반면, 다른 한쪽에서는 연속적인 연결 이탈이 발생하는 기현상이 관찰됩니다. 이러한 결과 차이는 초기 서버 환경 제약과 타깃</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260727-0018.html">PBN 빌더 구축 시 유흥 이용 주의사항 탐색과 서울 정보 블로그 반영 구조</a>
+        <p class="post-item__summary">새롭게 개설한 인프라가 안정적인 궤도에 오르는 사례가 있는 반면, 유사한 여건에서도 조기에 접속 신호가 저하되는 대립적 결과가 자주 발생합니다. 서버 웜업 작업을 조기에 시작했는지 혹은 네트워크 간</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+      <a class="pager__link" href="posts-3.html">3</a>
+      <a class="pager__link" href="posts-4.html">4</a>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
